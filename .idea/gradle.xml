@@ -9,6 +9,7 @@
           <set>
             <option value="C:\Users\Jocelyn\Programmes\Android\OpenCVApp" />
             <option value="C:\Users\Jocelyn\Programmes\Android\OpenCVApp\app" />
+            <option value="C:\Users\Jocelyn\Programmes\Android\OpenCVApp\opencv-android" />
           </set>
         </option>
       </GradleProjectSettings>
