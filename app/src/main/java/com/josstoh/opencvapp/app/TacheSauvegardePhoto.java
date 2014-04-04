@@ -3,6 +3,7 @@ package com.josstoh.opencvapp.app;
 import android.os.AsyncTask;
 import android.os.Environment;
 import android.util.Log;
+import android.widget.Toast;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -19,6 +20,13 @@ class SavePhotoTask extends AsyncTask<byte[], String, String> {
             fichierPhoto.delete();
         }
 
+
+        for(int l=50;l<100;l++){
+            for(int c = 50; c<100; c++) {
+                int p = 640*l*3+c*3;
+
+            }
+        }
         try {
             FileOutputStream fos=new FileOutputStream(fichierPhoto.getPath());
 

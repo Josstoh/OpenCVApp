@@ -65,14 +65,36 @@ public class Preview extends SurfaceView implements SurfaceHolder.Callback{
             setOnClickListener(new OnClickListener(){
                 @Override
                 public void onClick(View view){
-                    mCamera.takePicture(null,null,null, new Camera.PictureCallback() {
+                    Toast.makeText(context, "3..2..1..", 10).show();
+                    mCamera.takePicture(null,
+                            new Camera.PictureCallback() {
 
-                        @Override
-                        public void onPictureTaken(byte[] photo, Camera camera) {
-                            new SavePhotoTask().execute(photo);
-                            camera.startPreview();
-                        }
-                    });
+                                @Override
+                                public void onPictureTaken(byte[] photo, Camera camera) {
+                                    try{
+                                        Toast.makeText(context, "PHOTO", 10).show();
+                                        Boolean bool = (photo==null);
+                                        Toast.makeText(context, bool.toString(), 10).show();
+                                    }
+                                   catch(Exception e) {
+                                        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                                        builder.setTitle("Erreur !").setMessage(e.getMessage()).show();
+                                   }
+
+                                }
+                            },
+                            null,
+                            new Camera.PictureCallback() {
+
+                                @Override
+                                public void onPictureTaken(byte[] photo, Camera camera) {
+                                    Toast.makeText(context, "PHOTO", 10).show();
+                                    new SavePhotoTask().execute(photo);
+                                    Toast.makeText(context, "PHOTO ENREGISTRE", 10).show();
+                                    Toast.makeText(context, String.valueOf(photo.length), 10).show();
+                                    camera.startPreview();
+                                }
+                            });
                 }
             });
         } catch (Exception e) {

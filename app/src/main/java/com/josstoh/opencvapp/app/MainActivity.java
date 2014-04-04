@@ -1,6 +1,7 @@
 package com.josstoh.opencvapp.app;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -23,14 +24,13 @@ public class MainActivity extends ActionBarActivity{
                     WindowManager.LayoutParams.FLAG_FULLSCREEN);
         }
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-
         // Create our Preview view and set it as the content of our activity.
         mPreview = new Preview(this);
         setContentView(mPreview);
-        LayoutInflater inflater = LayoutInflater.from(mPreview.context);
-        this.dialog = inflater.inflate(R.layout.dialog_dialog_choix_taille,null);
-        AlertDialog.Builder builder = new AlertDialog.Builder(mPreview.context);
-        builder.setTitle("Choisissez la taille").setView(dialog).show();
+        //LayoutInflater inflater = LayoutInflater.from(mPreview.context);
+        //this.dialog = inflater.inflate(R.layout.dialog_dialog_choix_taille,null);
+        //AlertDialog.Builder builder = new AlertDialog.Builder(mPreview.context);
+        //builder.setTitle("Choisissez la taille").setView(dialog).show();
     }
 
     @Override
