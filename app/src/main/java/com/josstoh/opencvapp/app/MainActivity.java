@@ -21,7 +21,7 @@ public class MainActivity extends ActionBarActivity implements CvCameraViewListe
     private CameraBridgeViewBase mOpenCvCameraView;
     private String TAG = "OpenCVApp";
 
- //test
+    //test
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
